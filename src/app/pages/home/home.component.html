@@ -1,0 +1,40 @@
+<div class="d_flex h-100">
+    <mat-toolbar class="d-flex justify-content-between">
+        
+        
+        <app-search></app-search>
+
+        <div class="fab-btns">
+            <button mat-icon-button color="primary" class="me-2">
+                <mat-icon>notifications</mat-icon>
+            </button>
+            <button mat-icon-button color="primary" class="me-2">
+                <mat-icon>chat</mat-icon>
+            </button>
+            <button mat-icon-button color="primary" class="me-2">
+                <mat-icon>mail_outline</mat-icon>
+            </button>
+            <button mat-icon-button color="primary" class="me-2">
+                <mat-icon>people</mat-icon>
+            </button>
+            <button mat-icon-button color="primary" class="me-2">
+                <mat-icon>person</mat-icon>
+            </button>
+        </div>
+    </mat-toolbar>
+    <div class="container">
+        <div class="row">
+            <div class="container">
+                <h1>Movies</h1>
+                <div class="d-flex flex-row flex-wrap">
+                    <div class="marquee-container">
+                        @for(m of movies; track m._id) {
+                            <app-movie-card [movieId]="m.id"></app-movie-card>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  
+
