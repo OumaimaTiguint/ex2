@@ -18,15 +18,15 @@ import { MovieCardComponent } from '../../shared/components/movie-card/movie-car
     	MatButtonModule,
 		SearchComponent,
 		HttpClientModule,
-    	MovieCardComponent
+    	MovieCardComponent,
 	],
 	providers: [MovieService],
   	templateUrl: './home.component.html',
   	styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  movies: any[] = [];
-  constructor(private moviesService: MovieService) {}
+  	movies: any[] = [];
+  	constructor(private moviesService: MovieService) {}
 
 	ngOnInit(): void {
 		this.moviesService.getMostPopularMovies().subscribe(res => {

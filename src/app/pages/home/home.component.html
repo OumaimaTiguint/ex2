@@ -27,11 +27,9 @@
             <div class="container">
                 <h1>Movies</h1>
                 <div class="d-flex flex-row flex-wrap">
-                    <div class="marquee-container">
-                        @for(m of movies; track m._id) {
-                            <app-movie-card [movieId]="m.id"></app-movie-card>
-                        }
-                    </div>
+                    @for(m of movies; track m._id) {
+                        <app-movie-card [movieId]="m.id"></app-movie-card>
+                    }
                 </div>
             </div>
         </div>
