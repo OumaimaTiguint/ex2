@@ -24,6 +24,7 @@ export class MovieCardComponent implements OnInit {
 				public dialog: MatDialog) {}
 
 	ngOnInit(): void {
+		console.log(this.movieId)
 		this.moviesService.getDetails(this.movieId?.replace(/^\/title\//, '')).subscribe(e => this.movieDetails = e);
 	}
 

@@ -8,6 +8,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MovieInfoModalComponent} from '../movie-info-modal/movie-info-modal.component';
 import {MatDialog} from '@angular/material/dialog';
 import {MovieService} from '../../services/movie.service';
+import {MovieCardComponent} from '../movie-card/movie-card.component';
 
 @Component({
 	selector: 'app-search',
@@ -20,7 +21,8 @@ import {MovieService} from '../../services/movie.service';
 		MatInputModule,
 		MatAutocompleteModule,
 		ReactiveFormsModule,
-		MovieInfoModalComponent
+		MovieInfoModalComponent,
+		MovieCardComponent
 	],
 	template: `
 		<mat-form-field appearance="outline" class="mt-4">
@@ -41,16 +43,10 @@ import {MovieService} from '../../services/movie.service';
 		</mat-form-field>
 
 		<mat-autocomplete #auto="matAutocomplete">
-			@for(item of filteredItems(); track item._id) {
-				<mat-option [value]="item._id" (onSelectionChange)="onAutocompleteSelectionChange(item)">
+			@for(item of filteredItems(); track item) {
+				<mat-option [value]="item" (onSelectionChange)="onAutocompleteSelectionChange(item)">
 					<div class="d-flex flex-row justify-content-between w-100 my-2">
-						<img src={{item.cover}} 
-							 alt={{item.title}} 
-							 width="50" 
-							 height="80"/>
-						<div class="text-nowrap overflow-hidden text-truncate ms-1" style="max-width: 150px">
-							{{item.title}}
-						</div>
+						<app-movie-card></app-movie-card>
 					</div>
       			</mat-option>
 			}

@@ -27,8 +27,8 @@
             <div class="container">
                 <h1>Movies</h1>
                 <div class="d-flex flex-row flex-wrap">
-                    @for(m of movies; track m._id) {
-                        <app-movie-card [movieId]="m.id"></app-movie-card>
+                    @for(m of movies; track m) {
+                        <app-movie-card [movieId]="m"></app-movie-card>
                     }
                 </div>
             </div>
