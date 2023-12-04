@@ -19,7 +19,8 @@ import {MovieService} from '../../services/movie.service';
 		FormsModule,
 		MatInputModule,
 		MatAutocompleteModule,
-		ReactiveFormsModule
+		ReactiveFormsModule,
+		MovieInfoModalComponent
 	],
 	template: `
 		<mat-form-field appearance="outline" class="mt-4">

@@ -3,6 +3,7 @@ import {Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogModule} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
 import {MovieService} from '../../services/movie.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
 	selector: 'app-movie-info-modal',
@@ -10,7 +11,8 @@ import {MovieService} from '../../services/movie.service';
 	imports: [
 		CommonModule,
 		MatDialogModule,
-		MatSelectModule
+		MatSelectModule,
+		HttpClientModule
 	],
 	providers: [MovieService],
 	templateUrl: './movie-info-modal.component.html',

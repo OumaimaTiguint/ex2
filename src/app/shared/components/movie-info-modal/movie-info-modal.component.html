@@ -2,14 +2,14 @@
     <div class="info-container">
         <div class="row">
             <div class="col-md-4">
-                <img [src]="data.book.cover" 
-                     [alt]="data.book.title" 
+                <img [src]="data.movie?.cover" 
+                     [alt]="data.movie?.title" 
                      class="m-2">
             </div>
             
             <div class="col-md-8">
-                <h3>{{data.book.title | titlecase}} <br> By {{data.book.author | titlecase}}</h3>
-                <p>{{data.book.description}}</p>
+                <h3>{{data.movie?.title | titlecase}}</h3>
+                <p>{{data.movie.description}}</p>
             </div>
         </div>
     </div>
